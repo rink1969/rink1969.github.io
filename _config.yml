@@ -108,3 +108,9 @@ deploy:
   type: 'git'
   repo: 'git@github.com:rink1969/rink1969.github.io.git'
   branch: gh-pages
+
+search:
+  path: search.xml
+  field: post
+  format: html
+  limit: 10000
