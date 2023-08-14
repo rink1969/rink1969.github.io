@@ -1,8 +1,13 @@
----
-layout: page
-title: Talks
----
+## 社交账号
+* [GitHub](https://github.com/rink1969)
+* [Email](mailto:rink1969@gmail.com)
+* [Twitter](https://twitter.com/Wei18327103)
+* [Linkedin](https://www.linkedin.com/in/%E5%BF%97%E4%BC%9F-%E5%AE%81-5a4a01b5)
+* [知乎](https://www.zhihu.com/people/rink-ning)
+* [网易云](https://music.163.com/#/user/home?id=97107751)
 
+
+## 公开演讲
 - 《区块链：一种自带开源基因的技术》 2017中国开源年会 COSCon'17 ([pdf](talks/COSCon17.pdf)，[演讲实录](https://www.weibo.com/ttarticle/p/show?id=2309404179001269682303))
 - 《隐私与跨链》 [CITAHub](https://www.citahub.com/) 首期培训分享 2018 ([pdf](talks/privacy-and-crosschain.pdf))
 - 《大数据遇到区块链》2018中国大数据技术大会（BDTC2018） ([pdf](talks/BDTC2018.pdf))

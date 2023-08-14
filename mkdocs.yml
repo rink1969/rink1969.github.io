@@ -1,0 +1,5 @@
+site_name: rink1969@home
+
+nav:
+  - 博客: index.md
+  - 关于我: about.md
