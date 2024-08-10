@@ -1,0 +1,357 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.17">
+    
+    
+      
+        <title>Linear Logic 与 FRP - rink1969@home</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.bcfcd587.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#ui" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="rink1969@home" class="md-header__button md-logo" aria-label="rink1969@home" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            rink1969@home
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Linear Logic 与 FRP
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="rink1969@home" class="md-nav__button md-logo" aria-label="rink1969@home" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    rink1969@home
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    博客
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../about/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    关于我
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#ui" class="md-nav__link">
+    <span class="md-ellipsis">
+      交互与UI
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#linear-logic-programming" class="md-nav__link">
+    <span class="md-ellipsis">
+      Linear Logic Programming
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      对于框架的意义
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#frp" class="md-nav__link">
+    <span class="md-ellipsis">
+      FRP
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  <h1>Linear Logic 与 FRP</h1>
+
+<h3 id="ui">交互与UI</h3>
+<p>在CKB的<a href="https://github.com/rink1969/ckb-generator">Dapp开发框架</a>中，现阶段只有非常简单的命令式交互，也没有涉及到多方交互。</p>
+<p>而实际上一个Dapp除了跟区块链交互，还会涉及跟其他参与方交互的流程。Cell Model这方面更甚，比如多签。</p>
+<p>一个Dapp的流程也有可能是动态的，根据链上状态的不同而不同。</p>
+<p>出于用户友好的考虑，最好是有一个UI来做信息的展示和用户交互。</p>
+<h3 id="linear-logic-programming">Linear Logic Programming</h3>
+<p>最近看到一个<a href="https://www.youtube.com/watch?v=bFeJZRdhKcI">视频</a>，讲利用linear logic programming进行复杂规则游戏的原型验证。</p>
+<p>整个游戏世界由一堆初始配置和一些演化规则组成。其中一些规则是关于用户交互调度，随机等的处理。</p>
+<p>游戏的进行就是在玩家的动作下，世界状态从初始配置开始，遵循演化规则，一步一步变化。</p>
+<p>规则可以使用linear logic来描述，因为游戏世界也跟现实世界很类似，死掉的角色不会再出现，物品用掉之后就没有了。</p>
+<hr />
+<p>交互方面，最简单的做法是把当前所有可能的选项列出来，让用户选择并输入对应的序号。</p>
+<p>这样的交互太简单了，处理不了更复杂的交互，比如需要用户输入多个值。</p>
+<p>另外因为是多玩家，并且分角色或者分队伍，很多选项其实是无效的。</p>
+<p>更好的做法是像回合制游戏一样，做一个回合的调度。这样在自己的回合里，用户可以做很多复杂的交互，比如输入。知道当前是哪个角色的回合，以及在整个流程里面的进度，就可以给出比较少的更有针对性的选项。</p>
+<hr />
+<p>系统中通常会有一些重要的不变量。基本的比如，每个玩家只有一次条生命；每个玩家都会有自己的回合等。</p>
+<p>规则设计的时候，维护系统的这些不变量是很重要的。</p>
+<p>如果初始配置是符合这些不变量，且每一条规则对世界状态进行变化的时候也保持这些不变量。那么在整个游戏过程中，这些不变量将会一致成立。</p>
+<p>使用linear logic来描述规则对于维持不变量非常有帮助。</p>
+<h3 id="_1">对于框架的意义</h3>
+<p>处理多个参与方的交互，我们可以借鉴上面的一些做法。</p>
+<p>linear logic用于Dapp开发，目前不是很紧急。</p>
+<p>因为区块链本身就是一个linear logic的系统（参见<a href="https://rink1969.github.io/Linear-Logic-Everywhere">上一篇文章</a>）。</p>
+<p>Dapp通常也都以链上数据为准，客户端如果跟链上状态没有同步，只要保证后续操作报错，不要有误操作即可。</p>
+<p>当然使用linear logic之后，就可以在开发阶段发现一些破坏不变量的行为，这对提高Dapp质量是非常有帮助的。</p>
+<h3 id="frp">FRP</h3>
+<p>Functional reactive programming是最近几年非常火的一项技术，多被用在交互式和UI领域。</p>
+<p>有一篇<a href="https://techsingular.net/2016/01/13/functional-ui-programming/">文章</a>，我觉得总结的不错。</p>
+<p>一提到UI编程，肯定都会想到MVC架构。很多人觉得FRP是代替MVC的，但是其实在FRP里面还是可以看到MVC的影子。FRP可以认为是一种多层Model之间同步的一种技术。也可以认为是嵌套的MVC，这里V并不是直接渲染出可以显示的内容（bitmap），而是将上一层的Model渲染为下一层Model。</p>
+<p>Cell Model相比Account Model，在MVC的M上面会更复杂。</p>
+<p>Account Model可以认为合约里表示状态的数据结构是核心的M，一般客户端不需要再单独维护自己的M。</p>
+<p>但是Cell Model下，链上没有一个显式的全局的M，这项工作必须放到客户端。</p>
+<p>在之前的<a href="https://rink1969.github.io/Account-Model-VS-UTXO-Model-3">文章</a>中，也提到类似的情况，当时是类比为Arrow。</p>
+<p>其实Arrow跟FRP有很密切的关系。在FRP中经常会出现Signal的概念，<code>SF a b = Signal a -&gt; Signal b</code>，这里的SF类型就是一个Arrow，而不是Monad。</p>
+<p>而且我们可以从FRP框架中借鉴一些做法。用户看到的是更上层的Model，开发的也只是上层Model之间的转换函数。我们可以把Cell相关的概念隐藏起来，严格限制对Cell的操作，这样可以让Dapp更加的安全和可靠。</p>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.1e8ae164.min.js"></script>
+      
+        <script src="../../search/main.js"></script>
+      
+    
+  </body>
+</html>

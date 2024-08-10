@@ -1,0 +1,438 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.17">
+    
+    
+      
+        <title>无处不在的Linear Logic - rink1969@home</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.bcfcd587.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#linear-logic" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="rink1969@home" class="md-header__button md-logo" aria-label="rink1969@home" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            rink1969@home
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              无处不在的Linear Logic
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="rink1969@home" class="md-nav__button md-logo" aria-label="rink1969@home" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    rink1969@home
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    博客
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../about/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    关于我
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#linear-logic" class="md-nav__link">
+    <span class="md-ellipsis">
+      Linear Logic
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      并行计算
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      内存管理
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#rust" class="md-nav__link">
+    <span class="md-ellipsis">
+      Rust
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      区块链
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#linear" class="md-nav__link">
+    <span class="md-ellipsis">
+      为什么叫linear
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  <h1>无处不在的Linear Logic</h1>
+
+<h3 id="linear-logic">Linear Logic</h3>
+<p>定义参见<a href="https://zh.wikipedia.org/wiki/%E7%BA%BF%E6%80%A7%E9%80%BB%E8%BE%91">wiki</a>。</p>
+<p>通常的逻辑描述的是真理(信息)。</p>
+<p>比如，我们知道了万有引力，就可以推断出苹果成熟后会落地。之后我们同时拥有关于“万有引力”和“苹果成熟后会落地”的信息。</p>
+<p>而<code>Linear Logic</code>描述的是资源。</p>
+<p>比如，我有一块钱 ，然后一块钱可以买一个包子。我买了包子之后，手里就只有一个包子，原来的一块钱就没有了。</p>
+<h3 id="_1">并行计算</h3>
+<p>之前做过一段时间并行计算的研究，在知乎上有个相关的<a href="https://www.zhihu.com/question/26095260/answer/70880514">回答</a>。</p>
+<p>能否并行计算跟问题域相关性非常大。</p>
+<hr />
+<p>首先是看客户在乎吞吐量还是时延？</p>
+<p>现在最常用的并行计算方式是SIMD，说白了就是堆硬件。比如一个计算任务，单核要算4个小时。现在绝大部分的并行计算，其实并不是说给4个cpu核，就能把时间压缩到1个小时。而是同样需要4个小时才能出结果，但是一下给出4个结果（4个核分配不同的计算任务）。</p>
+<p>如果客户对时延不敏感，那就没关系，反正两种方式都是4个小时完成4个任务。这种情况下SIMD可能还更好一些，因为程序中不可避免会有一些串行的部分，根据<strong>阿姆达尔定律</strong>不可能做到4倍的加速比，所以4核并行的时候，一般1个任务的时间比1个小时要多一些。</p>
+<p>当然这里有个限制，多个任务之间不存在数据依赖。</p>
+<p>以上方案可以看到，并不需要程序做什么改变，完全是运维工程师的事情。</p>
+<hr />
+<p>如果不满足以上条件，那就要程序支持并发。</p>
+<p>如前所述，我们就需要深入到程序内部，区分哪些步骤可以SIMD，哪些不行。不行的部分又要仔细分析数据依赖，看是否有小的子任务可以安排到不同核上同时计算。</p>
+<p>基本上是子任务拆的越细，并行度就会更高。当然最细力度的指令级并行CPU本身已经做的很好了，程序员只要关注任务级别就可以了。</p>
+<p>这样整个工作就变成大量子任务的调度，优化就有点像小学课本上介绍过的运筹学。</p>
+<blockquote>
+<p>烧烤架每次只能烤两串肉，一串肉需要烤两面，而每一面需要烤10分钟。那么考三串需要多少时间呢？</p>
+<p>我们将三串肉串分别记为A、B、C，每串肉两面记为1、2，第一次烤肉时先烤A1和B1，用时10分钟；第二次时拿出B串，烤A2和C1，同样用时10分钟，此时A串已经烤熟；第三次烤B2和C2，再用10分钟。这样一来，仅用了30分钟，三串肉便都可以烤熟了。</p>
+</blockquote>
+<p>从这个例子我们就可以看到，也是将烤一串肉这个任务拆分成两个子任务（每个烤一面）。</p>
+<p>通常这时子任务的数量比执行器要多，所以关键就是保证执行器的利用率尽量高。</p>
+<p>上面例子中的最优解里烧烤架的利用率是100%。如果按照最直接的方案，先烤A和B，然后再烤C，整个过程中烧烤架的利用率只有75%（后面单烤C的时候，有一半是空闲的），整体耗时也相应变成40分钟。</p>
+<hr />
+<p>在拆分子任务的过程中，问题的表达方式起到很重要的作用。</p>
+<p>就像前面知乎回答里面的并行加法器的例子，比较小的自然数相加看似无法拆分成更小的子任务，但是把自然数表达成二元组之后，就可以了。</p>
+<p>在执行器利用率方面，我们可以把执行器的使用时间当作一种资源，这就可以用到Linear Logic了。表达清楚所有计算资源在各个时间段里的归属情况，各种数据的声明周期，有利于更高效的调度。</p>
+<p>另外一种提高执行器利用率的方法是减少重复计算。</p>
+<p>比如算一个数八次方的函数：<code>f(x) = x * x * x * x * x * x * x * x</code></p>
+<p>给出 x = 2 之后，普通的计算方式就是把x乘8次。但是这不是最优的计算方式，最优的计算方式只需要三次运算：</p>
+<pre><code>tmp = square(x)
+tmp1 = square(tmp)
+result = square(tmp1)
+</code></pre>
+<p>通过linear logic的限制(变量只能用一次)，可以强迫用户写出最高效的代码。</p>
+<p>这在纯的函数式编程语言里面特别重要，因为纯的函数编程语言里面难以表达状态，通常有大量的重复计算，所以在相应的优化技术里面，基于linear logic的优化技术非常重要。参考《The optimal implementation of functional programming languages》。</p>
+<hr />
+<p>所以我们看到linear logic是反抽象的。</p>
+<p>linux的调度系统给每个进程都营造一种当前进程独占一个cpu的错觉。但是为了高效的并行，我们要打破这种错觉，让程序感知到真实的执行器的数量以及具体的使用率。</p>
+<p>人的思维有个定势，在解题的时候总觉得把前提条件都用上才行。但是有的时候，限制一下前提条件，反而会催生出更高效的解决方案。</p>
+<p>之前有个实验。给第一组的小朋友两根绳子和两块木板，让他们在脚不能沾地的情况下从房间的一头移动到另外一头。小朋友的方案是用两根绳子把两块木板绑在两只脚上，然后走过去。第二组小朋友只给一根绳子和一块木板。小朋友的解决方案是把绳子一头绑在木板上，一头拉在手里，然后两只脚都站在木板上。两脚同时往前跳的同时，手拉动绳子，带动木板也往前走。第二组用时反而比第一组更少。</p>
+<p>但是在没有限制的前提下，能想到后一种方案是非常反直觉的。</p>
+<p>这就像做选择题，不定项选择题比单选题的难度大了很多很多。</p>
+<h3 id="_2">内存管理</h3>
+<p>之前也研究过一段时间的GC算法，在知乎也有相关的<a href="https://www.zhihu.com/question/48420835/answer/110864894">答案</a>。</p>
+<p>内存管理也与linear logic有关系。如果程序严格遵循linear logic，一个变量只能使用一次，那么就可以不需要GC，实现静态的内存管理。</p>
+<p>初看起来，一个变量只能使用一次，那不是会导致程序里的变量更多，使用更多内存吗？</p>
+<p>例如，先设定<code>x = 1</code>，然后不能直接改<code>x = x + 1</code>，必须写成<code>x1 = x + 1</code>。</p>
+<p>但是一个变量只能使用一次，意味着变量使用之后，其内存就不会再被使用了。这时完全可以不做内存回收和再次分配的动作，直接复用原有的内存。这样上面新的变量<code>x1</code>其实用的就是之前<code>x</code>的内存，甚至编译器优化之后就是<code>x = x + 1</code>这样的代码。</p>
+<h3 id="rust">Rust</h3>
+<p>Rust的OwnerShip系统的思想源自Linear logic。</p>
+<p>关于这点，我专门问过核心团队的人，他们没有确认，但是我觉得很明显在思路上是有影响的，可能真正工程化的时候没有那么的重要。</p>
+<p>就像一开始举的例子，linear logic里的对象都只能严格的使用一次，这就对应Rust的Move语义。</p>
+<p>但是linear logic里也可以描述可以可以重复使用的对象，被称为exponentials，写作!A。在Rust中对应实现了Copy和Clone的Struct。</p>
+<p>可以认为！A就像一个无穷无尽的水龙头，任何需要的时候，都可以从它那里获取一个A类型的对象。</p>
+<p>所以在理论上，实现了Copy或者Clone的一个Struct A和没有实现Copy或者Clone的Struct A是完全不同的两个东西。前者是!A，后者就是A。</p>
+<p>但是实际使用的时候，很少有把这个特性使用起来的。比如像我们自己的项目中，几乎所有的Struct都直接或者间接的实现了Copy和Clone。</p>
+<p>我觉得可能是因为Rust目前主要用在服务器后台，其场景中大部分都是信息类的对象，比如登录用户信息等，很少有资源类的对象。</p>
+<p>如果有相关场景，或者说我们应该尽量去创造相应的场景，把这个特性使用起来。可以参见<a href="https://gankra.github.io/blah/linear-rust/">The Pain Of Real Linear Types in Rust</a>。</p>
+<hr />
+<p>关于Rust，我一直有一个问题，就是linear type（Ownership系统）是否妨碍了Rust的表达能力？</p>
+<p><a href="https://varkor.github.io/blog/2019/03/28/idiomatic-monads-in-rust.html">Idiomatic monads in Rust</a>这篇文章里有点相关的内容。</p>
+<p>简单来说还是上面的结论，linear logic是反抽象的。</p>
+<p>比如Rust为了支持Ownership，函数有三种类型：<code>Fn</code>, <code>FnMut</code> or <code>FnOnce</code>。</p>
+<p>而且Monad的基础定义就不符合linear logic关于资源使用的限制。</p>
+<p>因此实现Monad等非常抽象的结构时，困难重重。</p>
+<h3 id="_3">区块链</h3>
+<p><a href="https://arxiv.org/pdf/1506.01001">《Linear Types Can Change the Blockchain》</a>这篇论文讲述了linear logic与Blockchain的关系。</p>
+<p>对于Bitcoin来说，签名就是所有权的证明，交易是资产转移的证明。</p>
+<p>我们可以把具有相关性的交易串起来，形成多条子链，多条子链组合成一条大的链。</p>
+<p>子链组合的时候其复杂度不是相加的，而是相乘的。</p>
+<p>比如git里的rebase操作。在master上拉出一个分支fix，之后master上提交了3个commit，fix分支上也提交了3个commit。那么在rebase的时候最坏情况下要解决多少次冲突呢？答案不是6次，而是9次，即每两个commit之间都要检测一下是否冲突。</p>
+<p>组合的过程中还要保证依赖的一致性，并解决不确定性（不相关的交易的顺序有多种排列方式都不影响一致性），而这就是POW的作用。</p>
+<hr />
+<p>区块链里还有一个热门话题是交易并行。</p>
+<p>就如前面讨论过的，最简单的方式是没有数据依赖，可以直接SIMD解决。</p>
+<p>对应到以太坊里面，就是简单的分区，分片，更简单的是限制跨合约调用，这样就可以按调用的合约地址将交易分类，并行执行。缺点是跨分区的交易不好处理，对用户使用有限制。</p>
+<p>第二种方案是确定性的并行。其实交易是可以并行执行的，哪怕有数据依赖，更严重的问题是并行执行导致的不确定性。区块链上合约执行是不能有确定性问题的，否则就分叉了。</p>
+<p>有些方案是出块节点先把一个块内的交易执行一遍，在有数据依赖的时候，记录一下交易的执行顺序。然后把这个依赖顺序图随着块一起广播并共识。其他节点执行的时候按照一样的顺序执行，这样结果就是一致的了。</p>
+<p>这个方案的问题，一个是需要先执行一遍，这样加速比会打一个折扣；另一个是用户无法预估执行结果，相当于在所有可能的结果里面随意挑选一个，这会给用户带来很大的困扰。</p>
+<p>后来发现了一个受到以太坊资助的<a href="https://medium.com/@maiavictor">项目</a>，设计了一个新的智能合约编程语言。特点是，执行速度最优，可以并行执行，具有形式化验证的能力。</p>
+<p>这个语言底层计算模型就跟现有的语言完全不一样，使用SIC作为计算模型。SIC是linear logic的proof net模型的一个变种。</p>
+<p>并行执行的特点来源于linear logic在使用proof net作为计算模型计算的时候，有强汇聚性。强汇聚性，就像我们前面提到的git的例子，多个commit合并的时候，类型系统保证一定不会有冲突。</p>
+<p>但是这里的并行并不是在交易层面的并行，更像是CPU里面微观层面的并行，并行度由代码里面的数据依赖情况而定。</p>
+<hr />
+<p>最后是关于合约编程模型的。</p>
+<p>前面关于Account Model和UTXO Model的系列文章中，我们分别将其对应到Monad和Arrow。</p>
+<p>但是这两种计算模型都是不满足linear logic的，并不能体现出区块链中合约操作的对象是有ownership且只能使用一次这些特性。</p>
+<p>而且前面文章中提到的两个Model最主要一点区别是UTXO Model可以不用明确input和ouput之间的路径。这个特点其实在logic programming中也是存在的。</p>
+<p>另外linear logic可以强制保持系统的不变量，Libra的resource type就是这样的思路。</p>
+<p>因此后续合约编程模型会考虑将linear logic也集成进去。</p>
+<h3 id="linear">为什么叫linear</h3>
+<p>为什么linear logic叫linear？是因为其语义跟线性空间非常相关。</p>
+<p>一是前面提到过的，组合的时候张量积，这跟线性空间是一样的。</p>
+<p>二是linear logic描述的是对象在状态空间中的移动。而线性代数其实也是描述物体运动的，参见<a href="https://blog.csdn.net/myan/article/details/647511">孟岩的系列文章</a>。</p>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.1e8ae164.min.js"></script>
+      
+        <script src="../../search/main.js"></script>
+      
+    
+  </body>
+</html>

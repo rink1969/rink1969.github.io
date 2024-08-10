@@ -1,0 +1,359 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.17">
+    
+    
+      
+        <title>CRDT与Local First - rink1969@home</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.bcfcd587.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#_1" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="rink1969@home" class="md-header__button md-logo" aria-label="rink1969@home" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            rink1969@home
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              CRDT与Local First
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="rink1969@home" class="md-nav__button md-logo" aria-label="rink1969@home" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    rink1969@home
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    博客
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../about/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    关于我
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      问题
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#crdt" class="md-nav__link">
+    <span class="md-ellipsis">
+      CRDT
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#local-first" class="md-nav__link">
+    <span class="md-ellipsis">
+      Local First
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      未来工作
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      参考
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  <h1>CRDT与Local First</h1>
+
+<h2 id="_1">问题</h2>
+<p>在开发<a href="https://github.com/cita-cloud">CITA-Cloud</a>的过程中，一个比较复杂的功能就是交易池和分叉树的维护。</p>
+<p>用户发送的交易会通过广播扩散到各个节点，经过检查之后进入交易池。在合适的时间，节点会从交易池中挑选部分交易，打包成<code>proposal</code>加入分叉树，等待最终确认。</p>
+<p>因为是分布式系统，交易进入各个节点交易池的顺序可能不同。打包<code>proposal</code>时，因为是各个节点自己随意挑选的交易，不同块之间也会存在重复的情况。各个节点往分叉树上增加新的<code>proposal</code>时，都是在自己认为的最长链后面增加，所以也会存在分叉的情况。</p>
+<p>等过了一段时间之后，共识确认出了最长链，可能跟本节点原先认为的不同，这时就需要一个类似<code>git</code>切换分支的操作。这个操作比较复杂，分叉树以及交易池的状态都需要相应的更新。目前的实现简单粗暴，所以一直在思考这里应该是怎么样的一种算法和数据结构。</p>
+<h2 id="crdt"><code>CRDT</code></h2>
+<p>前一段时间看了参考资料1这篇文章，里面提到了<code>CRDT</code>。虽然描述的问题场景是协作软件，比如<code>google doc</code>，但是感觉跟前述问题非常相似。于是产生了深入了解<code>CRDT</code>的想法，接着就找到了参考资料2。</p>
+<p>在分布式系统领域有一个<code>CAP</code>原则，大致是说<code>C</code>（一致性），<code>A</code>（可用性）和<code>P</code>（容忍网络分区）这三个诉求，只能满足其中的两个，而无法同时满足三个。通常认为在设计系统的时候<code>P</code>是一定要满足的，因为网络分区的情况并不是软件系统能够控制的，那么就只能在<code>C</code>和<code>A</code>之间二选一了。</p>
+<p>但是参考资料2提出了一个新的角度。</p>
+<p>首先<code>CAP</code>的粒度太粗了，一致性有不同程度的一致性，可用性也可以分成很多等级，这个很早之前已经有人提出批评了。其实网络分区也可以按照时延细分出很多不同情况，比如共识算法里常说的同步网络，半同步网络，异步网络（参见<a href="https://rink1969.github.io/Blockchain-consistency_model">区块链提供什么类型的一致性？</a>）。</p>
+<p>很多选择也不像表面看起来那么简单。比如<code>PBFT</code>类共识算法，通常针对半同步网络，采用超时翻倍的方式进行无限重试。表面上看好像是选择了<code>A</code>，系统一直在活动，并没有停下来，但是从实际效果上就是选择了<code>C</code>，并没有可用性可言，因为没有实际出块。</p>
+<p>文章提出的思路是，虽然<code>P</code>是不受控制的，但是我们也不能逃避，而是应该正面面对它。软件应该主动去检测网络分区情况是否发生，如果发生了，则在此期间需要对操作进行一些限制，保证系统的一些不变量不被破坏，以便将来网络分区恢复之后，可以自然的将节点各自的修改合并到一起。这其实是一种在分区期间保持可用性，但是一致性降低为最终一致性的做法。</p>
+<p>这个思路对于区块链来说非常有意义。回头看我们前面描述的问题，因为是一种去中心化的场景，各个节点都是根据自己本地的情况做决策的，其实就相当于时刻处于一种网络分区的情况。也许我们可以使用<code>CRDT</code>技术来尽量减少各个节点的无效工作。</p>
+<h2 id="local-first">Local First</h2>
+<p>与<code>CRDT</code>一起出现的还有一个名词<code>Local First</code>。它指的是类似<code>google doc</code>这样一种应用，网络连接正常的时候可以多人协同编辑一份文档；而网络中断的情况下，每个参与者还是可以正常的编辑文档，软件的功能基本不受影响，只是期间看不到其他协作者的修改；等到网络连接恢复，会自动同步并合并多个参与者期间对文档的修改。当然对于开发者来说，还有一个更加熟悉的例子，那就是<code>git</code>。</p>
+<p><code>Local First</code>有很多优势：可用性高，离线状态也可以继续使用；安全，本地保存数据；隐私，只传递必要的交互数据。参见参考资料3和4.</p>
+<p>其实<a href="https://rink1969.github.io/cita-cloud">CITA-Cloud闲谈</a>中描述的未来的场景，就跟<code>Local First</code>很像。之前还在想这样的架构跟直接远程调用<code>SaaS</code>服务有什么区别，<code>Local First</code>倒是做了一个很好的总结。</p>
+<p>另外一个类比是暗黑之类的战网形式的网络游戏。单机也可以玩，接入战网就可以和其他玩家互动。这要求本地有完整的游戏逻辑，数据可以来自本地，也可以来自网络。实际要求的是业务逻辑和数据在设计上的分离。战网其实提供了游戏之外额外的价值，比如单机打到的设备无法交易，但是战网上打到的设备可以交易，类似于区块链上的数字资产。</p>
+<h2 id="_2">未来工作</h2>
+<p><code>CRDT</code>有两种实现方式：一种是操作本身是可交换的，自然可以合并。比如超市买东西，最终的总价和你买东西的顺序是无关的；另一种是描述的值在一个半格结构上面，<code>merge</code>的时候有汇聚性。对于前一种方式，因为操作会比较受限，可能在某些特性的场景会有应用。对于后一种情况，其实在区块链里并不鲜见，其实pow就是赋予各个分叉链一个半格结构，从而可以自然地从多个分叉链中选择出主链。</p>
+<p><code>CRDT</code>的核心是如何解决冲突，目前针对的都是比较简单的协作场景。在区块链这样的拜占庭场景下，所有的操作都需要是可信的，因此会有很多哈希等操作，而这些操作很多是不具有可交换性的。另外，节点之间是相互不信任的，可能会拒绝别其他节点增加的交易，这种情况下如何解决冲突就变得很复杂了。</p>
+<p>要在区块链中应用<code>CRDT</code>，有两种方式：一种是在共识前阶段，比如交易池和分叉树使用，这是要解决操作受限和拜占庭情况引发的冲突的问题。另外一种是在共识后，因为共识本身就是解决冲突的，可以认为共识之后的应用层就不存在拜占庭情况了，可以尝试基于<code>CRDT</code>实现一个应用编程模式。</p>
+<h2 id="_3">参考</h2>
+<ol>
+<li><a href="https://josephg.com/blog/crdts-are-the-future/">I was wrong. CRDTs are the future</a></li>
+<li><a href="https://www.infoq.com/articles/cap-twelve-years-later-how-the-rules-have-changed">CAP Twelve Years Later: How the "Rules" Have Changed</a></li>
+<li><a href="https://www.infoq.cn/article/kpiK-qYmJGuzX12ejvaG">不要在云上保存你的数据（一）：本地优先的七个理念</a></li>
+<li><a href="https://www.infoq.cn/article/TAJhsV1-BZWmbLJ7NrYr">不要在云上保存你的数据（二）：未来软件发展途径</a></li>
+</ol>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.1e8ae164.min.js"></script>
+      
+        <script src="../../search/main.js"></script>
+      
+    
+  </body>
+</html>

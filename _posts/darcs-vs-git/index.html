@@ -1,0 +1,379 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.17">
+    
+    
+      
+        <title>darcs vs git - rink1969@home</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.bcfcd587.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#_1" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="rink1969@home" class="md-header__button md-logo" aria-label="rink1969@home" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            rink1969@home
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              darcs vs git
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="rink1969@home" class="md-nav__button md-logo" aria-label="rink1969@home" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    rink1969@home
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    博客
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../about/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    关于我
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      问题
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      版本控制软件
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      区别
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      结论
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  <h1>darcs vs git</h1>
+
+<h2 id="_1">问题</h2>
+<p><a href="https://github.com/cita-cloud">CITA-Cloud</a>设计的一个目标，或者说是我个人的一个执念，就是希望能够将区块链拆分成多个现有软件的组合。这样就能复用已有的软件，提高开发速度，提升区块链的产品质量。</p>
+<p>上一篇文章提到分叉树和交易池跟 <code>git</code> 的一些操作很像，因此花了一些时间调研版本控制软件，看是否能直接复用。</p>
+<h2 id="_2">版本控制软件</h2>
+<p>版本控制软件发展历史很悠久，相关的软件也非常多。按照发展的顺序可以分为：</p>
+<ol>
+<li>中心化的版本控制软件，比如 <code>ClearCase</code> 和 <code>SVN</code> 。它们的特点是有个中心化的服务器，一些比较大的企业还专门配有管理人员。好处是可以非常方便的设置权限，可以细化到目录，如果你没有仓库下某个目录的权限，那么你同步代码之后，本地相应的目录是空的。它的协作方式是加锁，修改代码之前要先<code>checkout</code>相关的文件，提交修改，最后要有个<code>checkin</code>操作，在这期间别人是无法修改同样的文件的。</li>
+<li>分布式的版本控制软件，比如 <code>git</code> 和 <code>darcs</code> 等等。随着开源软件的发展，软件开发中的大规模协作逐渐成为主流，版本控制软件也随之进化为分布式的。它们的特点是没有中心化的服务器，每个人 <code>clone</code> 了之后，本地都是一个完整的仓库，特别符合上一篇文章提到的 <code>Local First</code> 原则。</li>
+</ol>
+<p>在分布式的版本控制软件领域里，相关软件其实很多，但是现在基本上已经形成<code>git</code>一家独大的情形。作为对比的另外一方，<a href="http://darcs.net/">darcs</a>其实也挺落魄的，它是用 <code>Haskell</code> 开发的，因此在 <code>Haskell</code> 圈子里面用的挺多的，<code>GHC</code>原来也是用<code>darcs</code>的，但是后来改用 <code>git</code> 了。但是 <code>darcs</code> 凭借着优雅的理论，还是有一些忠诚的拥趸。</p>
+<h2 id="_3">区别</h2>
+<p><code>darcs</code> 和 <code>git</code> 最大的区别是， <code>git</code> 是基于 <code>snapshot</code> 的，而 <code>darcs</code> 是基于 <code>patch</code> 的。</p>
+<p>用户修改一个文件之后， <code>git</code> 会保存修改前和修改后的两份文件，而 <code>darcs</code> 则保存的仅仅是通过 <code>diff</code> 算法计算出的 <code>patch</code> 。</p>
+<p><code>git</code>的做法比较简单粗暴，但是性能比较好，是典型的工程师做法。而 <code>darcs</code> 则比较有学术气息，背后有一套完善的<a href="https://en.wikibooks.org/wiki/Understanding_Darcs/Patch_theory">Patch Theory</a>。</p>
+<p>使用层面，两者还是比较类似的，很多子命令都是对应的。 <code>darcs</code> 的使用可以参考<a href="https://darcsbook.acmelabs.space">教程</a>。</p>
+<p>比较突出的区别是 <code>darcs</code> 没有分支的概念，一个仓库就是一系列的 <code>patch</code> 。但是可以通过多个仓库来模拟多个分支，本地的多个仓库之间可以相互 <code>pull</code> ，而且是直接用文件系统路径，也挺方便的。</p>
+<p>刚才提到 <code>darcs</code> 的一个仓库就是一系列的 <code>patch</code> ，但是这些 <code>patch</code> 之间不是我们直觉认为的按照提交顺序排成一条线，而是按照相互间的依赖顺序形成一个 <code>DAG</code> 。</p>
+<p>我们来看一个具体的例子：</p>
+<pre><code>$ darcs show dependencies            
+digraph {
+   graph [rankdir=LR];
+   node [imagescale=true];
+   &quot;18522b92&quot; [label=&quot;add A&quot;]
+   &quot;75dc6b70&quot; [label=&quot;add B&quot;]
+   &quot;c16edac9&quot; [label=&quot;modify A&quot;]
+   &quot;a1365f85&quot; [label=&quot;modify B&quot;]
+   &quot;d2a4c3ff&quot; [label=&quot;modify both&quot;]
+   &quot;847091fa&quot; [label=&quot;modify A again&quot;]
+
+   &quot;c16edac9&quot; -&gt; {&quot;18522b92&quot;}
+   &quot;a1365f85&quot; -&gt; {&quot;75dc6b70&quot;}
+   &quot;d2a4c3ff&quot; -&gt; {&quot;18522b92&quot; &quot;75dc6b70&quot; &quot;c16edac9&quot; &quot;a1365f85&quot;}
+   &quot;847091fa&quot; -&gt; {&quot;18522b92&quot; &quot;75dc6b70&quot; &quot;c16edac9&quot; &quot;a1365f85&quot; &quot;d2a4c3ff&quot;}
+}
+</code></pre>
+<p>我们先增加 <code>A</code> 和 <code>B</code> 两个文件，然后分别修改两个文件的内容，注意这些操作是分成四次提交的。我们从依赖信息上看到， <code>modify A</code> 依赖 <code>add A</code> ， <code>modify B</code> 依赖 <code>add B</code> ，但是这两组修改之间是没有依赖关系的。</p>
+<p>两个仓库合并的时候，其实就是把两边的补丁放到一起，重新梳理一下依赖关系，形成一个新的 <code>DAG</code> 。没有依赖关系的 <code>patch</code> 之间的先后顺序是可以随意调整的。</p>
+<p>因此 <code>darcs</code> 在合并分支的时候，会比 <code>git</code> 要智能很多， <code>git</code> 经常搞出一些莫名其妙的冲突出来。</p>
+<p>但是代价是 <code>darcs</code> 合并操作非常慢，最坏情况下是指数级的复杂度。 <code>GHC</code> 之所以放弃 <code>darcs</code> 切换到 <code>git</code> ，就是因为他们在合并一个比较大的分支时，经常跑很久都没反应。</p>
+<p>而且 <code>darcs</code> 倾向于将修改拆分成小的 <code>patch</code> ，这更加剧了性能问题。我们看上面例子中的 <code>modify both</code> ，表示同时修改了<code>A</code>和<code>B</code>两个文件，但是这次我们是作为一次修改提交的。再看依赖关系，我们就会发现 <code>modify both</code> 依赖了前面的所有的 <code>patch</code> 。因此，如果我们想更好的发挥 <code>darcs</code> 的优势，就不能像 <code>git</code> 那样，一次提交修改很多个文件。但是这个挺反人类的，我们提交一般都是完成一个特性开发提交一次，除非是源码文件组织的特别好，否则很难不涉及到多个文件的修改。</p>
+<p><code>darcs</code> 还可以让用户来指定 <code>patch</code> 之间的依赖。它的教程里有个<a href="https://darcsbook.acmelabs.space/chapter07.html">例子</a>是，如果我们在 <code>A</code> 文件里增加了一行 <code>use B</code> ，表示新增 <code>A</code> 模块对 <code>B</code> 模块的依赖。那么我们应该让这个 <code>patch</code> 依赖 <code>B</code> 文件相关的最近的一个 <code>patch</code> ，否则合并的时候可能会出问题。相当于在版本控制中加入了一些代码语义上的依赖信息。</p>
+<p>这么做当然是有好处的，但是感觉太麻烦了。这就像 <code>Haskell</code> 和 <code>Python</code> 的对比一样，大家都知道静态类型语言好，把类型定义清楚好处很多，但是实际开发的时候，还不是 <code>Python</code> 真香？</p>
+<p>前面提到了 <code>darcs</code> 仓库里的 <code>patch</code> 是按依赖关系组织成 <code>DAG</code> 的，当然一般就是树状的。因此我们可以把树上不同分支的 <code>patch</code> 看成仓库内的分支，它管这个叫 <code>自发分支</code> ，名字挺酷的。但是随之而来的困扰就是我根本闹不清楚当前的 <code>workspace</code> 是怎么算出来的，尤其是合并操作之后，经常搞出一些莫名奇妙的变化。</p>
+<h2 id="_4">结论</h2>
+<p>回到最初的问题，我想用版本控制软件来管理分叉树和交易池，不管是 <code>git</code> 还是 <code>darcs</code> ，在这个场景上都不适合。</p>
+<p>主要是因为版本控制软件所在的层次太低了。举一个最简单的情况，两个开发者同时往一个文件末尾增加一行相同的内容。在merge的时候，版本管理工具是无法知道，这两个相同的修改是重复的，还是真的要做两遍。</p>
+<p>还是需要更多高层的信息，<code>darcs</code>这方面相对要好一些，但是还远远不够。</p>
+<p>另外一种方案是，一个交易一个文件，一个块对应一个文件夹，把文件 <code>mv</code> 到对应的文件夹，就表示把交易加入块中。这样就不涉及文件内容，修改只跟文件操作相关。但是这种情况下还是会有问题，大家可以试试如下操作：</p>
+<ol>
+<li>新建一个仓库。</li>
+<li>增加 <code>tx1</code> ， <code>tx2</code> ， <code>tx3</code> 三个文件。</li>
+<li>创建两个分支， <code>branch1</code> 和 <code>branch2</code> 。</li>
+<li><code>branch1</code> 上做两次提交：创建文件夹 <code>block1</code> ，然后 <code>mv tx1 tx2 ./block1</code> ;  创建文件夹 <code>block2</code> ，然后 <code>mv tx3 ./block2</code> 。</li>
+<li><code>branch2</code> 上也做两次提交：创建文件夹 <code>block1</code> ，然后 <code>mv tx1 ./block1</code> ;  创建文件夹 <code>block2</code> ，然后 <code>mv tx2 tx3 ./block2</code> 。</li>
+<li>合并两个分支。</li>
+</ol>
+<p>在默认设置下，  <code>git</code> 最终合并结果是 <code>block1</code> 文件夹中有 <code>tx1 tx2</code> ，  <code>block2</code> 文件夹中有 <code>tx2 tx3</code> ，而 <code>darcs</code> 的最终合并结果是 <code>block1</code> 文件夹中只有 <code>tx1</code> ，  <code>block2</code> 文件夹中只有 <code>tx3</code> ， <code>tx2</code> 还在根目录下。这个跟它们选择的合并策略有关系，比如 <code>darcs</code> 就是发现修改有冲突的时候干脆两边都不改，而 <code>git</code> 好像恰恰相反。</p>
+<p>这些策略的选择其实没有对错之分，每个软件都是根据自己适用的场景，或者是作者的个人喜好作出了选择。但是这些选择到了另外一个场景可能就不行了，我们可能需要有一个可以灵活配置，或者是方便做二次开发的版本控制方面的库或者软件。</p>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.1e8ae164.min.js"></script>
+      
+        <script src="../../search/main.js"></script>
+      
+    
+  </body>
+</html>
