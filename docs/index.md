@@ -1,3 +1,6 @@
+## 2024
+* 08-10 [为什么感觉区块链没什么用](_posts/why-blockchain-useless.md)
+
 ## 2021
 * 02-17 [南北湖 “朝圣” 之旅](_posts/nanbeihu.md)
 
